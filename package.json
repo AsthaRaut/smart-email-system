@@ -1,0 +1,14 @@
+{
+  "name": "smart-mail-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -k -n api,web -c cyan,yellow \"npm run dev --prefix server\" \"wait-on tcp:5000 && npm run dev --prefix client\"",
+    "start": "npm start --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "wait-on": "^9.5.1"
+  }
+}
